@@ -1,4 +1,4 @@
-export const drawerReeducer = (state = { drawer: false }, action) => {
+export const drawerReducer = (state = { drawer: false }, action) => {
   switch (action.type) {
     case "DRAWER":
       return {

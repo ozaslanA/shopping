@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { BsLightbulb, BsBasketFill, BsFillMoonFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
 const Navbar = () => {
   const [color, setColor] = useState(false);
+  const dispatch = useDispatch();
   useEffect(() => {
     const root = document.getElementById("root");
     if (color) {
@@ -30,7 +32,10 @@ const Navbar = () => {
           )}
         </div>
 
-        <div className="relative">
+        <div
+          onClick={() => dispatch({ type: "DRAWER", payload: true })}
+          className="relative"
+        >
           <BsBasketFill size={30} className="cursor-pointer" />
           <span className="absolute top-0 right-0 px-1 bg-red-600 text-white rounded-full text-sm">
             3
