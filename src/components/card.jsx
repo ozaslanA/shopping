@@ -14,6 +14,15 @@ const Card = () => {
           className="cursor-pointer"
         />
       </div>
+      <div className=" h-28 flex items-center justify-between border-b py-4">
+      <
+
+
+
+
+
+
+      </div>
     </div>
   );
 };
