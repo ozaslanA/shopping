@@ -9,7 +9,7 @@ const Detail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { product } = useSelector((state) => state.product);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   useEffect(() => {
     dispatch(productsActionDetail(id));
   }, [dispatch]);
@@ -21,7 +21,7 @@ const Detail = () => {
   };
 
   const decrement = (Stock) => {
-    if (count > 0) {
+    if (count > 1) {
       setCount(count - 1);
     }
   };

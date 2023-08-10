@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { BsLightbulb, BsBasketFill, BsFillMoonFill } from "react-icons/bs";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 const Navbar = () => {
   const [color, setColor] = useState(false);
   const dispatch = useDispatch();
+  const { cardItems } = useSelector((state) => state.cardItems);
   useEffect(() => {
     const root = document.getElementById("root");
     if (color) {
@@ -38,7 +39,7 @@ const Navbar = () => {
         >
           <BsBasketFill size={30} className="cursor-pointer" />
           <span className="absolute top-0 right-0 px-1 bg-red-600 text-white rounded-full text-sm">
-            3
+            {cardItems?.length}
           </span>
         </div>
       </div>
