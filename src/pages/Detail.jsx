@@ -3,11 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { productsActionDetail } from "../Redux/actions/products";
 import { CgMathMinus, CgMathPlus } from "react-icons/cg";
+import { productsCard } from "../Redux/actions/card";
+
 const Detail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { product } = useSelector((state) => state.product);
   const [count, setCount] = useState(0);
+  useEffect(() => {
+    dispatch(productsActionDetail(id));
+  }, [dispatch]);
 
   const increment = (Stock) => {
     if (count <= Stock) {
@@ -21,9 +26,10 @@ const Detail = () => {
     }
   };
 
-  useEffect(() => {
-    dispatch(productsActionDetail(id));
-  }, [dispatch]);
+  const addCard = () => {
+    dispatch(productsCard(id, count));
+    dispatch({ type: "DRAWER", payload: true });
+  };
 
   console.log("product", product);
 
@@ -55,7 +61,10 @@ const Detail = () => {
               size={30}
             />
           </div>
-          <button className="bg-orange-600 w-full p-1 rounded-lg  h-16 my-10 text-white">
+          <button
+            onClick={addCard}
+            className="bg-orange-600 w-full p-1 rounded-lg  h-16 my-10 text-white"
+          >
             Sepete Ekle
           </button>
         </div>
