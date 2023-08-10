@@ -20,10 +20,10 @@ const Card = () => {
       {cardItems?.map((card, i) => (
         <div
           key={i}
-          className="h-28 flex items-center justify-between py-4 mt-5"
+          className="h-50 flex items-center justify-between py-4 mt-5"
         >
-          <img className="h-23 " src={card?.image} alt="" />
-          <div className="w-44">
+          <img className="w-20" src={card?.image} alt="" />
+          <div className="w-60">
             <div className="font-bold text-sm">
               {" "}
               {card?.title} ({card?.qty}){" "}
@@ -31,7 +31,7 @@ const Card = () => {
             <div className="opacity-70 text-xs">{card?.description} </div>
           </div>
           <div className="font-bold text-lg">{card?.price} TL </div>
-          <div className="bg-red-500 w-20 p-2 text-center text-white rounded-lg cursor-pointer">
+          <div className="bg-orange-500 w-20 p-2 text-center text-white rounded-lg cursor-pointer">
             Sil
           </div>
         </div>
