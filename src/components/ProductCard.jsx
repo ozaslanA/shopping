@@ -13,7 +13,7 @@ const ProductCard = ({ prd }) => {
         {(prd?.title).substring(0, 40)}
       </div>
       <div className="text-center opacity-70 text-sm">
-        {(prd?.description).substring(0, 35)}...
+        {(prd?.description).substring(0, 50)}...
       </div>
       <div className="font-bold text-lg orange-600">{prd?.price}$</div>
       <button className="bg-orange-600 w-full p-2 rounded-lg text-white">

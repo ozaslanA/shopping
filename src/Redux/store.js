@@ -5,6 +5,7 @@ import { drawerReducer } from "./reducers/drawer";
 import { productsReducer } from "./reducers/products";
 import { productsDetailReducer } from "./reducers/productDetail";
 import { cardReducer } from "./reducers/card";
+import { searchReducer } from "./reducers/search";
 
 const cardItems = JSON.parse(localStorage.getItem("cardItems")) || {};
 let initialState = {
@@ -16,6 +17,7 @@ const reducers = combineReducers({
   products: productsReducer,
   product: productsDetailReducer,
   cardItems: cardReducer,
+  search: searchReducer,
 });
 
 const store = createStore(
