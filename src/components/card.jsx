@@ -28,10 +28,9 @@ const Card = () => {
           className="h-50 flex items-center justify-between py-4 mt-5"
         >
           <img className="h-20" src={card?.image} alt="" />
-          <div className="w-58">
+          <div className="w-60">
             <div className="font-bold text-sm">
-              {" "}
-              {card?.title} ({card?.qty}){" "}
+              {card?.title} ({card?.qty})
             </div>
             <div className="opacity-70 text-xs">
               {(card?.description).substring(0, 80)}
